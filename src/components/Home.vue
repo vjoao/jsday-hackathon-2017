@@ -4,8 +4,8 @@
 			<Navigation />
 
 			<div class="intro-message">
-							<p class="search-message">Buscar <span class="blue">professores</span></p>
-							<p class="find-new-teacher">Encontre os melhores professores para seus alunos</p>
+				<p class="search-message">Buscar <span class="blue">professores</span></p>
+				<p class="find-new-teacher">Encontre os melhores professores para seus alunos</p>
 			</div>
 
 			<div class="search-form-home">

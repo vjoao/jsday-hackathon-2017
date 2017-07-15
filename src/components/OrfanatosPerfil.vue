@@ -2,7 +2,7 @@
     <div class="container">
         <Navigation></Navigation>
         
-        <h1 class="teacher-name">Orfanato Vó Filó</h1>
+        <h1 class="teacher-name">{{ orphanage.name }}</h1>
         <div class="phone-viewport">
             <md-list class="md-double-line">
                 <md-list-item>
@@ -22,7 +22,7 @@
                     <md-icon class="md-primary">email</md-icon>
 
                     <div class="md-list-text-container">
-                        <span>vo_filo@gmail.com</span>
+                        <a href="mailto:vo_filo@gmail.com">vo_filo@gmail.com</a>
                         <span>Personal</span>
                     </div>
                 </md-list-item>
@@ -56,6 +56,14 @@
     export default {
         components: {
             Navigation
+        },
+        firebase() {
+            return {
+                orphanage: {
+                    source: db.ref('/orphanages/' + this.$route.params.id),
+                    asObject: true
+                }
+            }
         }
     }
 </script>

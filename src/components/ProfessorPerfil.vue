@@ -31,7 +31,7 @@
 
                     <div class="md-list-text-container">
                         <span>Disciplinas</span>
-                        <span>Matemática, Física, Química</span>
+                        <span> {{ subjects(professor) }} </span>
                     </div>
                 </md-list-item>
 
@@ -54,6 +54,7 @@
     import db from '../db';
 
     export default {
+       
         components: {
             Navigation
         },
@@ -63,6 +64,16 @@
                     source: db.ref('/professors/' + this.$route.params.id),
                     asObject: true
                 }
+            }
+        },
+        methods: {
+            subjects (professor) {
+                return professor.subjects.reduce( (current, subject) => {
+                    if(!current)
+                        return subject.name;
+                    
+                    return current + ', ' + subject.name;
+                 }, '');                
             }
         }
     }

@@ -7,21 +7,19 @@
         </div>
 
         <div class="search-form-home">
-            <input type="text" class="search-home" name="search" placeholder="Digite o nome do orfanato"/>
+            <input v-model="search" type="text" class="search-home" name="search" placeholder="Digite o nome do orfanato"/>
         </div>
-
 		<md-layout md-row>
-			<md-layout md-flex="25" class="cards-teacher">
+			<md-layout md-flex="25" class="cards-teacher" v-for="orphanage in filteredOrphanages">
 				<md-card>
 					<md-card-header>
-						<div class="md-title">Orfanato Lorem ipsum</div>
+						<div class="md-title">{{ orphanage.name }}</div>
 						<div class="md-subhead">Cidade Nova - Feira de Santana</div>
 					</md-card-header>
 
 					<md-card-expand>
 						<md-card-actions>
-							<md-button>Ver Perfil</md-button>
-							<md-button>Chat</md-button>
+							<router-link :to="{ name: 'OrfanatosPerfil', params: { id: orphanage['.key'] }}">Ver Perfil</md-button>
 							<span style="flex: 1"></span>
 							<md-button class="md-icon-button" md-expand-trigger>
 								<md-icon>keyboard_arrow_down</md-icon>
@@ -45,16 +43,60 @@
 
 		</md-layout>
 
+						<md-card-content>
+							<p>Responsável: Pedro Mota</p>
+							<p>Alunos: 35</p>
+							<p>Média de idade: 14 anos</p>
+						</md-card-content>
+					</md-card-expand>
+				</md-card>
+			</md-layout>
+			<p v-if="filteredOrphanages.length === 0" class="find-new-teacher">Nada encontrado</p>
+		</md-layout>
     </div>
 </template>
 
 <script>
     import Navigation from './Navigation.vue'
+	import db from '../db';
+	import Fuse from 'fuse.js';
 
     export default {
-        components: {
-            Navigation
-        }
+		data () {
+			return {
+				search: '',
+				fuse: {}
+			}
+		},
+		components: {
+			Navigation
+		},
+		asyncComputed: {
+			filteredOrphanages () {
+				const options = {
+					shouldSort: true,
+					threshold: 0.3,
+					location: 0,
+					distance: 100,
+					maxPatternLength: 32,
+					minMatchCharLength: 3,
+					keys: [
+						"name"
+					]
+				};
+
+				const fuse = new Fuse(this.orphanages, options);
+
+				if(this.search)
+					return fuse.search(this.search);
+				return this.orphanages;
+			}
+		},
+		firebase: {
+			orphanages: {
+				source: db.ref('/orphanages')
+			}
+		}
     }
 </script>
 

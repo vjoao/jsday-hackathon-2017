@@ -24,7 +24,7 @@
 	
 					<md-card-expand>
 						<md-card-actions>
-							<md-button>Ver Perfil</md-button>
+							<router-link tag="md-button" :to="{ name: 'ProfessorPerfil', params: { id: professor['.key'] }}">Ver Perfil</router-link>
 							<md-button>Chat</md-button>
 							<span style="flex: 1"></span>
 							<md-button class="md-icon-button" md-expand-trigger>

@@ -6,7 +6,7 @@
 
     <!-- Navigation component -->
     <nav class="menu">
-            <router-link tag="md-button" to="/professores">Professores</router-link>
+            <router-link tag="md-button" to="/">Professores</router-link>
             <router-link tag="md-button" to="/orfanatos">Orfanatos</router-link>
             <router-link tag="md-button" to="/login">Login</router-link>
 

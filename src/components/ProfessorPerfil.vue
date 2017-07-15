@@ -1,6 +1,9 @@
 <template>
     <div class="container">
         <Navigation></Navigation>
+        <md-layout md-row>
+            
+        </md-layout>
     </div>
 </template>
 

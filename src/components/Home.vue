@@ -229,16 +229,8 @@
 				db: {}
 			}
 		},
-		methods: {
-			logout () {
-				firebase.auth().signOut();
-			}
-		},
 		components: {
 			Navigation
-		},
-		created() {
-			this.$bindAsObject('user', db.ref('/users/' + firebase.auth().currentUser.uid))
 		}
 	}
 </script>

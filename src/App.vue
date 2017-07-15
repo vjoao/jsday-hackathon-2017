@@ -22,10 +22,6 @@ body {
 	margin: 0 auto;
 }
 
-.md-button {
-  color: #747474!important;
-}
-
 .blue{
 	color:  #4A90E2;
 }

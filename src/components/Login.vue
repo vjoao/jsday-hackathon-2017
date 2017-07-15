@@ -1,7 +1,6 @@
 <template>
     <md-layout md-row md-align="center">
         <md-layout md-flex="33" md-align="center">
-            
             <img src="../assets/logo.png"/>
 
             <md-input-container :class="{ 'md-input-invalid' : hasErrors }">
@@ -14,7 +13,7 @@
                 <md-input v-model="password" v-on:input.native="hasErrors = false" type="password"></md-input>
             </md-input-container>
 
-            <md-button class="md-primary md-raised" @click.native="login"> Entrar </md-button>
+            <md-button class="md-raised md-primary" @click.native="login"> Entrar </md-button>
             <md-button class="md-primary" @click.native="login"> Esqueci minha senha </md-button>
         </md-layout>
     </md-layout>

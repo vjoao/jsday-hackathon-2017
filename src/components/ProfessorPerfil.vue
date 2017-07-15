@@ -2,15 +2,14 @@
     <div class="container">
         <Navigation></Navigation>
         
-        <h1 class="teacher-name">John Doe</h1>
+        <h1 class="teacher-name">{{professor.name }} </h1>
         <div class="phone-viewport">
             <md-list class="md-double-line">
                 <md-list-item>
                     <md-icon class="md-primary">phone</md-icon>
 
                     <div class="md-list-text-container">
-                        <span>(650) 555-1234</span>
-                        <span>Mobile</span>
+                        <span>(75) 9999-9999</span>
                     </div>
 
                     <md-button class="md-icon-button md-list-action">
@@ -22,7 +21,7 @@
                     <md-icon class="md-primary">email</md-icon>
 
                     <div class="md-list-text-container">
-                        <span>aliconnors@example.com</span>
+                        <a href="mailto:aliconnors@example.com">aliconnors@example.com</a>
                         <span>Personal</span>
                     </div>
                 </md-list-item>
@@ -52,10 +51,19 @@
 
 <script>
     import Navigation from './Navigation.vue'
+    import db from '../db';
 
     export default {
         components: {
             Navigation
+        },
+        firebase() {
+            return {
+                professor: {
+                    source: db.ref('/professors/' + this.$route.params.id),
+                    asObject: true
+                }
+            }
         }
     }
 </script>

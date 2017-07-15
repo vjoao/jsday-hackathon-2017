@@ -35,6 +35,27 @@
 						<input type="text" class="search-home" name="search" placeholder="Digite uma matéria"/>
 					</div>
 
+				<md-layout md-row>
+					<md-layout md-flex="25">
+						<md-card md-with-hover>
+							<md-card-header>
+								<div class="md-title teacher-name">John Doe</div>
+								<div class="md-subhead courses">Matemática, Física</div>
+							</md-card-header>
+
+							<md-card-content>
+								<p>Phone: 75 99999-0000</p>
+							</md-card-content>
+
+							<md-card-actions>
+								<md-button>Ver perfil</md-button>
+							</md-card-actions>
+						</md-card>
+					</md-layout>
+
+
+
+				</md-layout>
 			</div>
 	</div>
 </template>

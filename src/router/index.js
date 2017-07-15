@@ -5,6 +5,7 @@ import Login from '@/components/Login'
 import firebase from 'firebase';
 import ProfessorPerfil from '@/components/ProfessorPerfil'
 import Orfanatos from '@/components/Orfanatos'
+import OrfanatosPerfil from '@/components/OrfanatosPerfil'
 
 
 Vue.use(Router)
@@ -35,6 +36,11 @@ const router = new Router({
       path: '/professor/:id',
       name: 'ProfessorPerfil',
       component: ProfessorPerfil
+    },
+    {
+      path: '/orfanatos/:id',
+      name: 'OrfanatosPerfil',
+      component: OrfanatosPerfil
     }
   ]
 

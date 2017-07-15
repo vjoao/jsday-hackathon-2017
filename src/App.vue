@@ -22,35 +22,38 @@ body {
 	margin: 0 auto;
 }
 
-.navigation {
-	margin: 35px 0;
-}
-
-.logo {
-	max-width: 220px;
-}
-
-.menu {
-	float: right;
-}
-
-.logo,
-.menu {
-	display: inline-block;
-	vertical-align: text-top;
-}
-
-.menu a {
-	margin-left: 25px;
-	color: #ffffff;
-}
-
 .md-button {
   color: #747474!important;
 }
 
 .blue{
 	color:  #4A90E2;
+}
+
+.intro-message {
+	margin: 80px 0 20px 0;
+}
+
+.intro-message .search-message {
+	font-size: 36px;
+	color: #979797;
+	margin: 25px 0;
+}
+
+.intro-message .find-new-teacher {
+	font-size: 20px;
+	color: #979797;
+}
+
+.search-home {
+	width: 100%;
+	padding: 20px;
+	border-radius: 5px;
+	border: 1px solid #d4d4d4;
+	outline: none;
+	margin: 10px 0;
+	font-size: 18px;
+	color: #616161;
 }
 
 </style>

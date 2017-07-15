@@ -1,5 +1,5 @@
 <template>
-    <md-layout md-row md-align="center">
+    <md-layout md-row md-align="center" class="login-top">
         <md-layout md-flex="33" md-align="center">
             <img src="../assets/logo.png"/>
 
@@ -22,6 +22,9 @@
 <style>
     md-layout {
         background: red;
+    }
+    .login-top {
+        margin-top: 80px;
     }
 </style>
 

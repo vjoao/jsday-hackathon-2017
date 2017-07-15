@@ -52,7 +52,8 @@
 
 <script>
     import Navigation from './Navigation.vue'
-
+    import db from '../db';
+    
     export default {
         components: {
             Navigation

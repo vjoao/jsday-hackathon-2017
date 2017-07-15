@@ -19,7 +19,7 @@
 
 					<md-card-expand>
 						<md-card-actions>
-							<router-link :to="{ name: 'OrfanatosPerfil', params: { id: orphanage['.key'] }}">Ver Perfil</md-button>
+							<router-link :to="{ name: 'OrfanatosPerfil', params: { id: orphanage['.key'] }}">Ver Perfil</router-link>
 							<span style="flex: 1"></span>
 							<md-button class="md-icon-button" md-expand-trigger>
 								<md-icon>keyboard_arrow_down</md-icon>

@@ -27,6 +27,11 @@ const router = new Router({
       component: Orfanatos
     },
     {
+      path: '/professores',
+      name: 'Professores',
+      component: Home
+    },
+    {
       path: '/professor/:id',
       name: 'ProfessorPerfil',
       component: ProfessorPerfil

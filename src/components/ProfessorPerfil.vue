@@ -41,7 +41,7 @@
 
                     <div class="md-list-text-container">
                         <span>Dias disponíveis</span>
-                        <span>Matemática, Física, Química</span>
+                        <span>Segunda (10:30-12:30), Terça (8:30-10:30), Sexta (09:30-11:30)</span>
                     </div>
                 </md-list-item>
             </md-list>

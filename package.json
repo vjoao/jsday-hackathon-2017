@@ -1,0 +1,19 @@
+{
+  "name": "jsday-hackathon-2017",
+  "version": "1.0.0",
+  "description": "Project hosted for JSDay Feira de Santana hackathon 2017",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vjoao/jsday-hackathon-2017.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vjoao/jsday-hackathon-2017/issues"
+  },
+  "homepage": "https://github.com/vjoao/jsday-hackathon-2017#readme"
+}

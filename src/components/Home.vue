@@ -19,13 +19,12 @@
 				<md-card>
 					<md-card-header>
 						<div class="md-title">{{ professor.name }}</div>
-						<div class="md-subhead">Matemática, Física, Química</div>
+						<div class="md-subhead">{{ subjects(professor) }}</div>
 					</md-card-header>
 	
 					<md-card-expand>
 						<md-card-actions>
 							<router-link tag="md-button" :to="{ name: 'ProfessorPerfil', params: { id: professor['.key'] }}">Ver Perfil</router-link>
-							<md-button>Chat</md-button>
 							<span style="flex: 1"></span>
 							<md-button class="md-icon-button" md-expand-trigger>
 								<md-icon>keyboard_arrow_down</md-icon>
@@ -42,7 +41,7 @@
 					</md-card-expand>
 				</md-card>
 			</md-layout>
-	
+			<p v-if="filteredProfessors.length === 0" class="find-new-teacher">Nada encontrado</p>
 		</md-layout>
 	</div>
 </template>
@@ -91,9 +90,17 @@ export default {
 			source: db.ref('/professors')
 		}
 	},
-	created () {
-		
+	methods: {
+		subjects (professor) {
+			return professor.subjects.reduce( (current, subject) => {
+				if(!current)
+					return subject.name;
+				
+				return current + ', ' + subject.name;
+				}, '');                
+		}
 	}
+	
 }
 </script>
 

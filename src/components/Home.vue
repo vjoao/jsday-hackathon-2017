@@ -11,11 +11,11 @@
 		</div>
 	
 		<div class="search-form-home">
-			<input type="text" class="search-home" name="search" placeholder="Digite uma matéria" />
+			<input v-model="search" type="text" class="search-home" name="search" placeholder="Digite uma matéria" />
 		</div>
 	
 		<md-layout md-row>
-			<md-layout md-flex="25" class="cards-teacher" v-for="professor in professors">
+			<md-layout md-flex="25" class="cards-teacher" v-for="professor in filteredProfessors">
 				<md-card>
 					<md-card-header>
 						<div class="md-title">{{ professor.name }}</div>
@@ -51,15 +51,48 @@
 import firebase from 'firebase'
 import db from '../db';
 import Navigation from './Navigation.vue'
+import Fuse from 'fuse.js';
 
 export default {
+	data () {
+		return {
+			search: '',
+			fuse: {}
+		}
+	},
 	components: {
 		Navigation
+	},
+	asyncComputed: {
+		filteredProfessors () {
+			const options = {
+				shouldSort: true,
+				threshold: 0.6,
+				location: 0,
+				distance: 100,
+				maxPatternLength: 32,
+				minMatchCharLength: 3,
+				keys: [
+					"name",
+					"subjects.name"
+				]
+			};
+
+
+			const fuse = new Fuse(this.professors, options);
+
+			if(this.search)
+				return fuse.search(this.search);
+			return this.professors;
+		}
 	},
 	firebase: {
 		professors: {
 			source: db.ref('/professors')
 		}
+	},
+	created () {
+		
 	}
 }
 </script>

@@ -19,7 +19,7 @@
 
 					<md-card-expand>
 						<md-card-actions>
-							<md-button>Ver Perfil</md-button>
+							<router-link :to="{ name: 'OrfanatosPerfil', params: { id: orphanage['.key'] }}">Ver Perfil</md-button>
 							<span style="flex: 1"></span>
 							<md-button class="md-icon-button" md-expand-trigger>
 								<md-icon>keyboard_arrow_down</md-icon>
@@ -27,8 +27,9 @@
 						</md-card-actions>
 
 						<md-card-content>
-							<p>Contato: 75 9 9999-0000</p>
-							<p>Redes sociais: <a href="#">Twitter</a>, <a href="#">Facebook</a></p>
+							<p>Responsável: Pedro Mota</p>
+							<p>Alunos: 35</p>
+							<p>Média de idade: 14 anos</p>
 						</md-card-content>
 					</md-card-expand>
 				</md-card>

@@ -33,9 +33,6 @@ const router = new Router({
       component: ProfessorPerfil
     }
   ]
-
-// Como você trabalha com o ensino de programação para meninas ?
-
 })
 
 export default router

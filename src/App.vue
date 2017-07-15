@@ -51,7 +51,7 @@ body {
 	border-radius: 5px;
 	border: 1px solid #d4d4d4;
 	outline: none;
-	margin: 10px 0;
+	margin: 10px 0 30px 0;
 	font-size: 18px;
 	color: #616161;
 }
